@@ -1,8 +1,8 @@
 FROM node:alpine as builder
 WORKDIR '/home/node'
-COPY package.json .
+COPY package.json ./
 RUN npm install
-COPY . .
+COPY ./ ./
 RUN npm run build
 
 FROM nginx:1.14-alpine
